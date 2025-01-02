@@ -14,7 +14,7 @@ const Main = () => {
       <div className="main-left mx-auto justify-center">
         <motion.img
           src={animateCircle}
-          className="w-[80px] mt-20 ml-20 justify-center sm:w-[100px] h-[80px] sm:h-[100px] absolute top-0 left-0 sm:top-5 sm:left-5"
+          className="w-[80px] mt-14 ml-14 justify-center sm:w-[100px] h-[80px] sm:h-[100px] absolute top-0 left-0 sm:top-5 sm:left-5"
           alt=""
           whileInView={{ rotate: [0, 360] }}
           transition={{ duration: 2, repeat: Infinity }}
@@ -65,7 +65,7 @@ const Main = () => {
       <div className="main-right mx-auto justify-center">
         <motion.img
           src={animateCircle2}
-          className="w-[80px] sm:w-[100px] h-[80px] sm:h-[100px] absolute bottom-0 right-0 sm:bottom-5 sm:right-5 mb-20 mr-20"
+          className="w-[80px] sm:w-[100px] h-[80px] sm:h-[100px] absolute bottom-0 right-0 sm:bottom-5 sm:right-5 mb-14 mr-14"
           alt=""
           whileInView={{ rotate: [0, -360] }}
           transition={{ duration: 2, repeat: Infinity }}
