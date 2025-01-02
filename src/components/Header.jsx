@@ -48,18 +48,19 @@ const Header = () => {
         )}
       </div>
 
-      <div className="header-middle">
+      <a href='/' className="header-middle">
         <h1 className='text-6xl font-medium'>gleamy</h1>
-      </div>
+      </a>
 
       <div className="header-right">
         <motion.div
-          className="menu-icon cursor-pointer"
+          className="menu-icon flex items-center gap-8 text-xl cursor-pointer"
           onClick={toggleMenu}
           initial={{ rotate: 0 }}
           animate={{ rotate: menuOpen ? 90 : 0 }}
           transition={{ duration: 0.5 }}
         >
+          <h1>MENU</h1>
           <AiOutlineMenu size={40} />
         </motion.div>
 
@@ -80,10 +81,10 @@ const Header = () => {
               <AiOutlineClose size={40} />
             </motion.div>
             <ul className="menu-items z-10 text-white text-2xl">
-              <li><a href="/" onClick={toggleMenu}>Home</a></li>
-              <li><a href="/" onClick={toggleMenu}>About</a></li>
-              <li><a href="/" onClick={toggleMenu}>Services</a></li>
-              <li><a href="/" onClick={toggleMenu}>Contact</a></li>
+              <li><a href="/main" onClick={toggleMenu}>Home</a></li>
+              <li><a href="/about" onClick={toggleMenu}>About</a></li>
+              <li><a href="/services" onClick={toggleMenu}>Services</a></li>
+              <li><a href="/portfolio" onClick={toggleMenu}>Portfolio</a></li>
             </ul>
           </motion.div>
         )}

@@ -62,7 +62,7 @@ const Main = () => {
         </motion.h1>
       </div>
 
-      <div className="main-right mx-auto justify-center">
+      <a href="https://www.youtube.com/watch?v=ngSdG2dFV2k&t=4s" className="main-right mx-auto justify-center">
         <motion.img
           src={animateCircle2}
           className="w-[80px] sm:w-[100px] h-[80px] sm:h-[100px] absolute bottom-0 right-0 sm:bottom-5 sm:right-5 mb-14 mr-14"
@@ -70,7 +70,7 @@ const Main = () => {
           whileInView={{ rotate: [0, -360] }}
           transition={{ duration: 2, repeat: Infinity }}
         />
-      </div>
+      </a>
     </motion.div>
   );
 };

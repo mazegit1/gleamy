@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Header from './components/Header';
 import Banner from './pages/Banner';
 import Main from './pages/Main';
+import About from './pages/About';
+import Services from './pages/Services';
+import Portfolio from './pages/Portfolio';
 
 const App = () => {
   const location = useLocation();
@@ -16,6 +19,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Banner />} />
         <Route path="/main" element={<Main />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/portfolio" element={<Portfolio />} />
       </Routes>
     </div>
   );
