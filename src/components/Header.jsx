@@ -13,14 +13,16 @@ const Header = () => {
 
   return (
     <motion.div
-      className='fixed py-4 bg-transparent text-white w-full flex items-center justify-between px-10 z-20' // Added z-20
+      className="fixed py-4 bg-transparent text-white w-full flex items-center justify-between px-4 md:px-8 z-20"
     >
+      {/* Left Section: Search */}
       <div className="header-left flex items-center">
         <motion.div
           className="search-icon cursor-pointer"
           onClick={toggleSearch}
+          aria-label="Toggle Search"
         >
-          <AiOutlineSearch size={40} />
+          <AiOutlineSearch size={24} className="md:size-30" />
         </motion.div>
         {searchActive && (
           <motion.input
@@ -28,40 +30,31 @@ const Header = () => {
             placeholder="Search..."
             value={searchQuery}
             onChange={handleSearchChange}
-            className="bg-transparent text-white border-b border-white focus:outline-none ml-2"
+            className="bg-transparent text-white border-b border-white focus:outline-none ml-2 w-20 md:w-auto"
             initial={{ width: 0 }}
             animate={{ width: 'auto' }}
             transition={{ duration: 0.3 }}
           />
         )}
-        {searchQuery && (
-          <motion.div
-            className="search-results"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <p>Searched for: {searchQuery}</p>
-            {/* Example: Display search results */}
-          </motion.div>
-        )}
       </div>
 
-      <a href='/' className="header-middle">
-        <h1 className='text-6xl font-medium'>gleamy</h1>
+      {/* Middle Section: Logo */}
+      <a href="/" className="header-middle text-center">
+        <h1 className="text-3xl md:text-5xl font-medium">gleamy</h1>
       </a>
 
+      {/* Right Section: Menu */}
       <div className="header-right">
         <motion.div
-          className="menu-icon flex items-center gap-8 text-xl cursor-pointer"
+          className="menu-icon flex items-center gap-3 md:gap-6 text-lg md:text-xl cursor-pointer"
           onClick={toggleMenu}
+          aria-label="Toggle Menu"
           initial={{ rotate: 0 }}
           animate={{ rotate: menuOpen ? 90 : 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1>MENU</h1>
-          <AiOutlineMenu size={40} />
+          <h1 className="hidden md:block">MENU</h1>
+          <AiOutlineMenu size={24} className="md:size-30" />
         </motion.div>
 
         {menuOpen && (
@@ -74,13 +67,14 @@ const Header = () => {
             <motion.div
               className="close-icon cursor-pointer absolute top-4 right-4"
               onClick={toggleMenu}
+              aria-label="Close Menu"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.3 }}
             >
-              <AiOutlineClose size={40} />
+              <AiOutlineClose size={24} className="md:size-30" />
             </motion.div>
-            <ul className="menu-items z-10 text-white text-2xl">
+            <ul className="menu-items z-10 text-white text-lg md:text-xl flex flex-col gap-4 text-center">
               <li><a href="/main" onClick={toggleMenu}>Home</a></li>
               <li><a href="/about" onClick={toggleMenu}>About</a></li>
               <li><a href="/services" onClick={toggleMenu}>Services</a></li>
